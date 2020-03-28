@@ -6,12 +6,15 @@
 </head>
 <body>
 	<div id="firstDiv">
-		<p>Hello!</p>
+		<p>Number is: {{ number }}</p>
 	</div>
 
 	<script type="text/javascript">
 		var firstVue = new Vue({
-			el: '#firstDiv'
+			el: '#firstDiv',
+			data: {
+				number: 1
+			}
 		});
 	</script>
 </body>
