@@ -7,20 +7,38 @@
 <body>
 	<div id="firstDiv">
 		<p>Number is: {{ number }}</p>
+		<ul>
+			<li v-for='number_ in numbers'>
+				{{ number_ }}
+			</li>
+		</ul>
+	</div>
+
+	<div id="secondDiv">
+		<p v-if="isDoorOpen">Come in</p>
+		<p v-else>Stay out</p>
 	</div>
 
 	<script type="text/javascript">
 		var firstVue = new Vue({
 			el: '#firstDiv',
 			data: {
-				number: 1
+				number: 1,
+				numbers: [1, 2, 3]
 			}
 		});
 
-		firstVue.$watch('number', function() {
-			alert("number has changed to:" + firstVue.number);
+		// firstVue.$watch('number', function() {
+		// 	alert("number has changed to:" + firstVue.number);
+		// });
+		// firstVue.number = 10;
+
+		var secondVue = new Vue({
+			el: '#secondDiv',
+			data: {
+				isDoorOpen: true,
+			}
 		});
-		firstVue.number = 10;
 
 	</script>
 </body>
