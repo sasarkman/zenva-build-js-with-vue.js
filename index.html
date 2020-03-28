@@ -6,6 +6,7 @@
 </head>
 <body>
 	<div id="firstDiv">
+		<input v-model="number">
 		<p>Number is: {{ number }}</p>
 		<ul>
 			<li v-for='number_ in numbers'>
@@ -15,6 +16,7 @@
 	</div>
 
 	<div id="secondDiv">
+		<button v-on:click='openCloseDoor'>Open/Close door</button>
 		<p v-if="isDoorOpen">Come in</p>
 		<p v-else>Stay out</p>
 	</div>
@@ -37,6 +39,11 @@
 			el: '#secondDiv',
 			data: {
 				isDoorOpen: true,
+			},
+			methods: {
+				openCloseDoor: function() {
+					this.isDoorOpen = !this.isDoorOpen;
+				}
 			}
 		});
 
