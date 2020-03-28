@@ -1,0 +1,22 @@
+{
+  "name": "zenva-build-js-with-vue",
+  "version": "1.0.0",
+  "description": "Learning Vue.js using the Zenva course \"Build JavaScript Applications with Vue.js\".",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasarkman/zenva-build-js-with-vue.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasarkman/zenva-build-js-with-vue.js/issues"
+  },
+  "homepage": "https://github.com/sasarkman/zenva-build-js-with-vue.js#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
