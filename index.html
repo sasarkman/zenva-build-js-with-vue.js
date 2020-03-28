@@ -16,6 +16,12 @@
 				number: 1
 			}
 		});
+
+		firstVue.$watch('number', function() {
+			alert("number has changed to:" + firstVue.number);
+		});
+		firstVue.number = 10;
+
 	</script>
 </body>
 </html>
