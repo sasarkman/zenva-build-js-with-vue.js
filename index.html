@@ -18,6 +18,16 @@
 			padding: 10px;
 			margin-bottom: 50px;
 		}
+
+		#blogPostCreation {
+			border-width: 2px;
+			border-style: solid;
+			border-color: black;	
+		}
+
+		#blogPostCreation > * {
+			margin: 10px;	
+		}
 	</style>
 </head>
 <body>
@@ -25,6 +35,15 @@
 
 	<div id='blogPosts'>
 		<blog-post v-for="post in posts" v-bind:blogpost="post"></blog-post>
+	</div>
+
+	<div id='blogPostCreation'>
+		<h2>Post new blog</h2>
+		<input v-model='title'><br>
+		<input v-model='username'><br>
+		<input v-model='date'><br>
+		<input v-model='content'><br>
+		<button v-on:click="publishPost">Publish post</button>
 	</div>
 
 	<script type="text/javascript">
