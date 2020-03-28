@@ -16,6 +16,7 @@
 			border-style: solid;
 			border-color: blue;
 			padding: 10px;
+			margin-bottom: 50px;
 		}
 	</style>
 </head>
@@ -23,16 +24,29 @@
 	<h1>Welcome to my blog site</h1>
 
 	<div id='blogPosts'>
-		<div id='singleBlogPost'>
-			<h2>{{ blogpost.title }}</h2>			
-			<h3>{{ blogpost.username }}</h3>
-			<h4>{{ blogpost.date }}</h4>
-			<p>{{ blogpost.content }}</p>
-		</div>
+		<blog-post v-for="post in posts" v-bind:blogpost="post"></blog-post>
 	</div>
 
 	<script type="text/javascript">
+		Vue.component('blog-post', {
+			props: ['blogpost'],
+			template: `<div id='singleBlogPost'>
+							<h2>{{ blogpost.title }}</h2>			
+							<h3>{{ blogpost.username }}</h3>
+							<h4>{{ blogpost.date }}</h4>
+							<p>{{ blogpost.content }}</p>
+						</div>`,
+		});
 
+		var blogVue = new Vue({
+			el: '#blogPosts',
+			data: {
+				posts: [
+					{title: "Blog 1", username: "User 1", date: "Date 1", content: "Content 1"},
+					{title: "Blog 2", username: "User 2", date: "Date 2", content: "Content 2"}
+				]
+			}
+		});
 	</script>
 </body>
 </html>
